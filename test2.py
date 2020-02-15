@@ -13,4 +13,11 @@ print("cloud change")
 
 print(1)
 
+print(3)
+
 print(4)
+
+def fun01():
+    pass
+
+
