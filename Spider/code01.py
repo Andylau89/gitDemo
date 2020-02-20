@@ -2,13 +2,12 @@
 from urllib import request
 
 # 网址必须写完全，包括http（不是https）
-url = 'http://www.sina.com.cn/'
-url = 'http://www.eastmoney.com/'
-url = 'http://httpbin.org/get'  #查看请求头
-
-header = {'User-Agent':'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; InfoPath.3)'}
+url = 'http://www.baidu.com/'
+# url = 'http://www.eastmoney.com/'
+# url = 'http://httpbin.org/get'  #查看请求头
+headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'}
 # 向百度发请求，得到响应对象
-req = request.Request(url = url,headers = header)
+req = request.Request(url = url,headers = headers)
 
 response = request.urlopen(req)
 # print(response)
@@ -18,11 +17,12 @@ response = request.urlopen(req)
 # 返回结果为b开头，是byte类型的
 # print(response.read())
 str = response.read().decode('utf-8')
+
 print(str)
 
 
 # print(len(str))
-# if '股吧互动' in str:
+# if '百度一下' in str:
 #     print('yes')
 
 #
